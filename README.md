@@ -4,12 +4,14 @@ Made as a project for The Odin Project curriculum.
 
 ## Installation
 
+To install all required packages use this command:
 
 ```bash
   npm install
 ```
 
-to start the server run this command:
+
+To start the server use this command:
 
 ```bash
   npm start
