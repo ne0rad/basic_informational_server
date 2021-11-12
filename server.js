@@ -1,26 +1,22 @@
 const express = require('express');
+const path = require('path');
 const app = express();
-const fs = require('fs');
 const port = 8080;
 
 app.get('/', function(req, res) {
-  res.writeHead(200, { 'content-type': 'text/html' })
-  fs.createReadStream('./pages/index.html').pipe(res)
+  res.sendFile(path.join(__dirname, '/pages/index.html'));
 });
 
 app.get('/about', function(req, res) {
-  res.writeHead(200, { 'content-type': 'text/html' })
-  fs.createReadStream('./pages/about.html').pipe(res)
+  res.sendFile(path.join(__dirname, '/pages/about.html'));
 });
 
 app.get('/contact-me', function(req, res) {
-  res.writeHead(200, { 'content-type': 'text/html' })
-  fs.createReadStream('./pages/contact.html').pipe(res)
+  res.sendFile(path.join(__dirname, '/pages/contact.html'));
 });
 
 app.get('*', function(req, res) {
-  res.writeHead(200, { 'content-type': 'text/html' })
-  fs.createReadStream('./pages/404.html').pipe(res)
+  res.sendFile(path.join(__dirname, '/pages/404.html'));
 });
 
 
